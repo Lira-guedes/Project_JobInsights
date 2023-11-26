@@ -9,10 +9,10 @@ class ProcessSalaries(ProcessJobs):
 
     def get_max_salary(self) -> int:
         salary_list = list()
-        
+
         for job in self.jobs_list:
             salary = job["max_salary"]
-            
+
             if salary.isdigit():
                 salary_list.append(int(salary))
 

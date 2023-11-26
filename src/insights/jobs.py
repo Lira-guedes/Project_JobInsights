@@ -7,9 +7,9 @@ class ProcessJobs:
         self.jobs_list = list()
 
     def read(self, path) -> List[Dict]:
-         with open(path, newline='') as file:
+        with open(path, newline='') as file:
             csvReader = csv.DictReader(file)
-            
+
             for row in csvReader:
                 self.jobs_list.append(row)
 
@@ -23,15 +23,18 @@ class ProcessJobs:
                 unique_job_types.add(job_type)
         return list(unique_job_types)
 
-    def filter_by_multiple_criteria(self, jobs: list, filter: dict) -> List[dict]:
+    def filter_by_multiple_criteria(self, jobs, filter: dict) -> List[dict]:
+
         job_list = []
 
         if not isinstance(filter, dict):
             raise TypeError("Filter must be a dict")
 
         for job in jobs:
-            criteria = all(job.get(key) == value for key, value in filter.items())
-            
+            criteria = all(
+                job.get(key) == value for key, value in filter.items()
+            )
+
             if criteria:
                 job_list.append(job)
 

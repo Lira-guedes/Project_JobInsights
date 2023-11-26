@@ -6,4 +6,3 @@ def test_counter():
     word = 'Python'
     result = 1639
     assert count_ocurrences(path, word) == result
-    
