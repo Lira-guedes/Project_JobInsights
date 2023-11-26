@@ -2,6 +2,7 @@ from typing import Union, List, Dict
 from src.insights.jobs import ProcessJobs
 # iniciando projeto
 
+
 class ProcessSalaries(ProcessJobs):
     def __init__(self):
         super().__init__()

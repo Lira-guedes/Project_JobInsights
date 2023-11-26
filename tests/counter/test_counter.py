@@ -1,5 +1,9 @@
-# from src.pre_built.counter import count_ocurrences
+from src.pre_built.counter import count_ocurrences
 
 
 def test_counter():
-    raise
+    path = 'data/jobs.csv'
+    word = 'Python'
+    result = 1639
+    assert count_ocurrences(path, word) == result
+    
